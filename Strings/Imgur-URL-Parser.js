@@ -8,13 +8,15 @@ An album (e.g. http://imgur.com/a/cjh4E)
 A gallery (e.g. http://imgur.com/gallery/59npG)
 An image (e.g. http://imgur.com/OzZUNMM)
 An image (direct link) (e.g. http://i.imgur.com/altd8Ld.png)
-Examples*/
+
+Example
+imgurUrlParser("http://imgur.com/a/cjh4E") ➞ { id: "cjh4E", type: "album" }
+*/
 
 const imgurUrlParser = url => {
-	 let parts = url.split('/')
-		if (parts[parts.length - 1] === "zip") parts.pop();
-
-	const id = parts.pop().split(/[^A-Za-z|\d]/).shift();
+  let parts = url.split('/')
+  if (parts[parts.length - 1] === "zip") parts.pop();
+  const id = parts.pop().split(/[^A-Za-z|\d]/).shift();
 
   let type;
 
