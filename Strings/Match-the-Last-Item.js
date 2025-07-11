@@ -10,7 +10,13 @@ matchLastItem([1, 1, 1, "11"]) ➞ false
 matchLastItem([8, "thunder", true, "8thundertrue"]) ➞ true*/
 
 function matchLastItem(arr) {
-	const concatenated = arr.slice(0, -1).join('');
+  const concatenated = arr.slice(0, -1).join('');
   return concatenated === arr[arr.length - 1];
+}
+
+// Alternatively
+
+function matchLastItem(arr) {
+  return arr.pop() === arr.join("");
 }
 
